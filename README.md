@@ -17,6 +17,10 @@ This analysis serves as the foundational data-engineering step toward building p
 1. **Thermal Envelope Stability:** Baseline operational limits were successfully mapped by correlating Turbine Inlet Temperature against Power Output.
 2. **Fault Signature Overlap:** Initial scatter plot analysis comparing RPM and Torque against Vibrations reveals that fault states (1) and normal states (0) exhibit overlapping clusters in the time domain. 
 3. **Trend Deviation:** While absolute magnitudes overlap, trend lines applied to the Torque vs. Vibration distributions suggest the mechanical *operational path* deviates during a fault state.
+4. Feature engineering (calculating the discrete time derivative of vibration) successfully isolated mechanical shocks, revealing a massive increase in $\frac{dV}{dt}$ variance during fault states compared to steady-state normal operations.
+
+<img width="844" height="547" alt="image" src="https://github.com/user-attachments/assets/2882b832-02e0-47f3-9313-baf78b534614" />
+
 
 ## Future Scope
 Because mechanical failures often manifest in the *rate of change* rather than absolute magnitude, future iterations of this analysis will feature:
