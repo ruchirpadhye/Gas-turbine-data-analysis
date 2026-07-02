@@ -1,2 +1,27 @@
-# Gas-turbine-data-analysis
-Analysis of high-frequency telemetry data to identify mechanical fault signatures in gas turbine engines.
+# Gas Turbine Telemetry Analysis: Predictive Maintenance EDA
+
+## Project Overview
+This repository contains an Exploratory Data Analysis (EDA) pipeline for gas turbine telemetry. The objective of this project is to process high-frequency sensor data (Temperature, RPM, Torque, Vibrations) to identify operational correlations and isolate mechanical fault signatures. 
+
+This analysis serves as the foundational data-engineering step toward building physics-informed surrogate models and predictive maintenance algorithms for aerospace and heavy mechanical systems.
+
+## Tech Stack & Methodology
+* **Language:** Python
+* **Data Ingestion & Cleaning:** `Pandas` (Handling missing values, boolean filtering, data grouping)
+* **Visualization:** `Matplotlib` (Time-series mapping, correlation scatter plots, rolling averages)
+* **Dataset:** 1,386 telemetry logs containing input parameters (Fuel Flow, Air Pressure) and output monitors (Power Output, Vibrations, Exhaust Temp), labeled with binary fault states (0 = Normal, 1 = Fault).
+
+## Key Findings & Visualizations
+<img width="1486" height="889" alt="image" src="https://github.com/user-attachments/assets/1094555a-9d51-4310-84c4-5cbd968a2ad3" />
+
+1. **Thermal Envelope Stability:** Baseline operational limits were successfully mapped by correlating Turbine Inlet Temperature against Power Output.
+2. **Fault Signature Overlap:** Initial scatter plot analysis comparing RPM and Torque against Vibrations reveals that fault states (1) and normal states (0) exhibit overlapping clusters in the time domain. 
+3. **Trend Deviation:** While absolute magnitudes overlap, trend lines applied to the Torque vs. Vibration distributions suggest the mechanical *operational path* deviates during a fault state.
+
+## Future Scope
+Because mechanical failures often manifest in the *rate of change* rather than absolute magnitude, future iterations of this analysis will feature:
+* **Derivative Feature Engineering:** Calculating `d(Vibration)/dt` and `d(Torque)/dt` to isolate sudden mechanical shocks.
+* **Frequency Domain Transformation:** Applying Fast Fourier Transforms (FFT) to transition from time-series averages to identifying specific harmonic frequencies that may lead to a failure.
+
+---
+*Developed as part of an autonomous systems and computational engineering portfolio.*
