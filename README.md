@@ -8,7 +8,7 @@ This analysis serves as the foundational data-engineering step toward building p
 ## Data Handling & Methodology
 * **Language:** Python
 * **Data Ingestion & Cleaning:** `Pandas` (Handling missing values, boolean filtering, data grouping)
-* **Visualization:** `Matplotlib` (Time-series mapping, correlation scatter plots, rolling averages)
+* **Visualization:** `matplotlib` (Time-series mapping, correlation scatter plots, rolling averages)
 * **Dataset:** 1,386 telemetry logs containing input parameters (Fuel Flow, Air Pressure) and output monitors (Power Output, Vibrations, Exhaust Temp), labeled with binary fault states (0 = Normal, 1 = Fault).
 
 ## Key Findings & Visualizations
